@@ -24,6 +24,7 @@ class App extends Component<{}, IState> {
       // We use this state to parse data down to the child element (Graph) as element property
       data: [],
       showGraph: false,
+      // graph is hidden 
     };
   }
 
@@ -40,6 +41,7 @@ class App extends Component<{}, IState> {
    * Get new data from server and update the state with the new data
    */
   getDataFromServer() {
+    // use interval to update the data 
     let x = 0;
     const interval = setInterval(() => {
       DataStreamer.getData((serverResponds: ServerRespond[]) => {
